@@ -5,11 +5,16 @@ use Anomaly\Streams\Addon\Module\Preferences\Exception\PreferenceDoesNotExistExc
 
 class PreferenceCollection extends EntryCollection
 {
-    public function findPreference($addonType, $addonSlug, $key)
+    public function findPreference($addonType, $addonSlug, $key, $userId)
     {
         foreach ($this->items as $item) {
 
-            if ($addonType == $item->addon_type and $addonSlug == $item->addon_slug and $key == $item->key) {
+            if (
+                $addonType == $item->addon_type and
+                $addonSlug == $item->addon_slug and
+                $key == $item->key and
+                $userId == $item->user_id
+            ) {
 
                 return $item;
 

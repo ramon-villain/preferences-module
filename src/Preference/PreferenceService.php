@@ -2,7 +2,6 @@
 
 use Anomaly\Streams\Platform\Traits\CommandableTrait;
 use Anomaly\Streams\Addon\Module\Preferences\Exception\PreferenceDoesNotExistException;
-use Anomaly\Streams\Addon\Module\Preferences\Preference\Command\SetPreferenceValueCommand;
 
 class PreferenceService
 {
@@ -15,7 +14,7 @@ class PreferenceService
     function __construct(PreferenceModel $preference)
     {
         $this->preference  = $preference;
-        $this->preferences = $preference->all();
+        $this->preferences = $preference->all(); // TODO: Include user restriction somewhere.
     }
 
     public function get($key, $default = null)
@@ -25,7 +24,10 @@ class PreferenceService
 
         try {
 
-            $value = $this->preferences->findPreference($addonType, $addonSlug, $key)->value;
+            // TODO: Finish this with the auth package.
+            $userId = 1;
+
+            $value = $this->preferences->findPreference($addonType, $addonSlug, $key, $userId)->value;
 
         } catch (PreferenceDoesNotExistException $e) {
 
@@ -36,7 +38,7 @@ class PreferenceService
         return $value;
     }
 
-    public function set($key, $value)
+    /*public function set($key, $value)
     {
         list($namespace, $key) = explode('::', $key);
         list($addonType, $addonSlug) = explode('.', $namespace);
@@ -44,6 +46,6 @@ class PreferenceService
         $command = new SetPreferenceValueCommand($addonType, $addonSlug, $key, $value);
 
         $this->execute($command);
-    }
+    }*/
 }
  
