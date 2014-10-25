@@ -11,6 +11,12 @@ class PreferencesModuleServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerPreferenceService();
+        $this->registerHelpers();
+    }
+
+    protected function registerPreferenceService()
+    {
         $this->app->singleton(
             'streams.preferences',
             function () {
@@ -19,6 +25,11 @@ class PreferencesModuleServiceProvider extends ServiceProvider
 
             }
         );
+    }
+
+    protected function registerHelpers()
+    {
+        include_once __DIR__ . '../../resources/helpers.php';
     }
 }
  

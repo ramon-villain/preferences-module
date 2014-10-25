@@ -4,8 +4,4 @@ use Anomaly\Streams\Platform\Addon\Module\ModuleAddon;
 
 class PreferencesModule extends ModuleAddon
 {
-    public function newServiceProvider()
-    {
-        return new PreferencesModuleServiceProvider($this->app);
-    }
 }
