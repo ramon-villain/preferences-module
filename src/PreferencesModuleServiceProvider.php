@@ -6,6 +6,7 @@ use Anomaly\Streams\Addon\Module\Preferences\Preference\PreferenceService;
 
 class PreferencesModuleServiceProvider extends ServiceProvider
 {
+
     /**
      * Register the service provider.
      */
@@ -29,7 +30,8 @@ class PreferencesModuleServiceProvider extends ServiceProvider
 
     protected function registerHelpers()
     {
-        include_once __DIR__ . '../../resources/helpers.php';
+        include_once __DIR__ . '../resources/helpers.php';
     }
+
 }
  

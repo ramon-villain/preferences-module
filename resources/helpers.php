@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Get the a preference value.
+ * Get a preference value.
  *
  * @param      $key
  * @param null $default
