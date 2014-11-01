@@ -4,6 +4,14 @@ use Illuminate\Support\ServiceProvider;
 use Anomaly\Streams\Addon\Module\Preferences\Preference\PreferenceModel;
 use Anomaly\Streams\Addon\Module\Preferences\Preference\PreferenceService;
 
+/**
+ * Class PreferencesModuleServiceProvider
+ *
+ * @link          http://anomaly.is/streams-platform
+ * @author        AnomalyLabs, Inc. <hello@anomaly.is>
+ * @author        Ryan Thompson <ryan@anomaly.is>
+ * @package       Anomaly\Streams\Addon\Module\Preferences
+ */
 class PreferencesModuleServiceProvider extends ServiceProvider
 {
 
@@ -13,16 +21,22 @@ class PreferencesModuleServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerServiceProviders();
-        $this->registerPreferenceService();
+        $this->registerPreferencesService();
         $this->registerHelpers();
     }
 
+    /**
+     * Register the service providers.
+     */
     protected function registerServiceProviders()
     {
         $this->app->register('Anomaly\Streams\Addon\Module\Preferences\Provider\RouteServiceProvider');
     }
 
-    protected function registerPreferenceService()
+    /**
+     * Register preferences service.
+     */
+    protected function registerPreferencesService()
     {
         $this->app->singleton(
             'streams.preferences',
@@ -34,10 +48,12 @@ class PreferencesModuleServiceProvider extends ServiceProvider
         );
     }
 
+    /**
+     * Register helpers.
+     */
     protected function registerHelpers()
     {
         include_once __DIR__ . '/../resources/helpers.php';
     }
-
 }
  
