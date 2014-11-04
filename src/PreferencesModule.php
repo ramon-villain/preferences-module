@@ -1,6 +1,6 @@
 <?php namespace Anomaly\Streams\Addon\Module\Preferences;
 
-use Anomaly\Streams\Platform\Addon\Module\ModuleAddon;
+use Anomaly\Streams\Platform\Addon\Module\Module;
 
 /**
  * Class PreferencesModule
@@ -10,7 +10,7 @@ use Anomaly\Streams\Platform\Addon\Module\ModuleAddon;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\Streams\Addon\Module\Preferences
  */
-class PreferencesModule extends ModuleAddon
+class PreferencesModule extends Module
 {
 
 }
