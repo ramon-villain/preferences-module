@@ -10,7 +10,7 @@ use Anomaly\Streams\Platform\Addon\Module\ModuleTag;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\Streams\Addon\Tag\Preferences
  */
-class PreferencesTag extends ModuleTag
+class PreferencesModuleTag extends ModuleTag
 {
 
     /**

@@ -1,10 +1,11 @@
 <?php namespace Anomaly\Streams\Addon\Module\Preferences\Preference;
 
-use Anomaly\Streams\Platform\Traits\CommandableTrait;
 use Anomaly\Streams\Addon\Module\Preferences\Exception\PreferenceDoesNotExistException;
+use Anomaly\Streams\Platform\Traits\CommandableTrait;
 
 class PreferenceService
 {
+
     use CommandableTrait;
 
     protected $preference;
@@ -28,24 +29,12 @@ class PreferenceService
             $userId = 1;
 
             $value = $this->preferences->findPreference($addonType, $addonSlug, $key, $userId)->value;
-
         } catch (PreferenceDoesNotExistException $e) {
 
             $value = $default;
-
         }
 
         return $value;
     }
-
-    /*public function set($key, $value)
-    {
-        list($namespace, $key) = explode('::', $key);
-        list($addonType, $addonSlug) = explode('.', $namespace);
-
-        $command = new SetPreferenceValueCommand($addonType, $addonSlug, $key, $value);
-
-        $this->execute($command);
-    }*/
 }
  
