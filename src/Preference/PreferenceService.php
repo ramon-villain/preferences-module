@@ -1,12 +1,9 @@
 <?php namespace Anomaly\Streams\Addon\Module\Preferences\Preference;
 
 use Anomaly\Streams\Addon\Module\Preferences\Exception\PreferenceDoesNotExistException;
-use Anomaly\Streams\Platform\Traits\CommandableTrait;
 
 class PreferenceService
 {
-
-    use CommandableTrait;
 
     protected $preference;
 
