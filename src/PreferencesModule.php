@@ -13,5 +13,5 @@ use Anomaly\Streams\Platform\Addon\Module\Module;
 class PreferencesModule extends Module
 {
 
-    protected $navigation = 'navigation.system';
+    protected $navigation = 'streams::navigation.system';
 }
