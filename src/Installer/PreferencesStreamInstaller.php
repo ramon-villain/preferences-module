@@ -11,7 +11,8 @@ class PreferencesStreamInstaller extends StreamInstaller
      * @var array
      */
     protected $stream = [
-        'is_hidden' => true,
+        'slug'   => 'preferences',
+        'hidden' => true,
     ];
 
     /**
@@ -26,5 +27,4 @@ class PreferencesStreamInstaller extends StreamInstaller
         'user'       => [],
         'value'      => [],
     ];
-
 }
