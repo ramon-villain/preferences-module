@@ -12,7 +12,7 @@ class PreferencesStreamInstaller extends StreamInstaller
      */
     protected $stream = [
         'slug'   => 'preferences',
-        'hidden' => true,
+        'locked' => true,
     ];
 
     /**
