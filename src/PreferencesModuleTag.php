@@ -20,7 +20,7 @@ class PreferencesModuleTag extends ModuleTag
      */
     public function get()
     {
-        return preference(
+        return app('streams.preferences')->get(
             $this->getAttribute('key'),
             $this->getAttribute('default')
         );
